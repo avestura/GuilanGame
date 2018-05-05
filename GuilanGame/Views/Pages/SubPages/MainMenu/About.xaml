@@ -1,0 +1,167 @@
+﻿<Page
+    x:Class="GuilanGame.Views.Pages.SubPages.MainMenu.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
+    xmlns:local="clr-namespace:GuilanGame.Views.Pages.SubPages.MainMenu"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="AboutPage"
+    Title="About"
+    d:DesignHeight="768"
+    d:DesignWidth="1024"
+    FontFamily="{StaticResource Fonts.IRANSans}"
+    mc:Ignorable="d">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+                        Storyboard.TargetName="AboutPage"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0"
+                        To="1"
+                        Duration="0:0:0.25" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="5*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1"
+            Background="#E5000000">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#7F000000">
+                <Viewbox Margin="0,5">
+                    <TextBlock Foreground="White">درباره بازی</TextBlock>
+                </Viewbox>
+                <Button
+                    HorizontalAlignment="Right"
+                    Click="Button_Click"
+                    Style="{DynamicResource GuilanGame.HeaderBlackButton}">
+                    <fa:ImageAwesome
+                        Width="24"
+                        Height="24"
+                        MinWidth="50"
+                        Margin="0,5"
+                        Foreground="#FFE4E4E4"
+                        Icon="ChevronCircleRight" />
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1" TextBlock.Foreground="#FBC02D">
+                <ScrollViewer
+                    FlowDirection="RightToLeft"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Image
+                            Width="150"
+                            Height="150"
+                            Margin="10"
+                            Source="{StaticResource Aryan.Software.Logo}" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Bold">
+                            آرین نرم افزار
+                        </TextBlock>
+
+                        <Grid
+                            Margin="30,20"
+                            FlowDirection="RightToLeft"
+                            TextBlock.FontSize="15"
+                            TextBlock.TextAlignment="Justify">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="0,0,0,10"
+                                Padding="15,15"
+                                Background="#CC262E3F"
+                                BorderBrush="#FF115A7F"
+                                BorderThickness="5,0,0,0"
+                                Foreground="#FF32B9FC">
+                                آرین ابراهیم پور
+                            </Label>
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="0,0,0,10"
+                                Padding="15,15"
+                                Background="#CC262E3F"
+                                BorderBrush="#FF115A7F"
+                                BorderThickness="5,0,0,0"
+                                Foreground="#FF32B9FC">
+                                نیکان دوستی
+                            </Label>
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Margin="0,0,0,10"
+                                Padding="15,15"
+                                Background="#CC262E3F"
+                                BorderBrush="#FF115A7F"
+                                BorderThickness="5,0,0,0"
+                                Foreground="#FF32B9FC">
+                                علی صادقی
+                            </Label>
+
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="0,0,0,10"
+                                Padding="15,15"
+                                Background="#CC433C2B">
+                                برنامه نویسی، طراحی و ایده کلی بازی
+                            </TextBlock>
+
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="0,0,0,10"
+                                Padding="15,15"
+                                Background="#CC433C2B">
+                                خلاقیت ها، ایده ها و طراحی سوالات بازی
+                            </TextBlock>
+
+                            <TextBlock
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="0,0,0,10"
+                                Padding="15,15"
+                                Background="#CC433C2B">
+                                حمایت از پروژه و عمومی سازی بازی
+                            </TextBlock>
+
+                        </Grid>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

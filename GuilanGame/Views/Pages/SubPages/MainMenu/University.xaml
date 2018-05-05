@@ -1,0 +1,99 @@
+﻿<Page
+    x:Class="GuilanGame.Views.Pages.SubPages.MainMenu.University"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
+    xmlns:local="clr-namespace:GuilanGame.Views.Pages.SubPages.MainMenu"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="AboutPage"
+    Title="About"
+    d:DesignHeight="768"
+    d:DesignWidth="1024"
+    FontFamily="{StaticResource Fonts.IRANSans}"
+    mc:Ignorable="d">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+                        Storyboard.TargetName="AboutPage"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0"
+                        To="1"
+                        Duration="0:0:0.25" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="5*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1"
+            Background="#E5000000">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#7F000000">
+                <Viewbox Margin="0,5">
+                    <TextBlock Foreground="White">درباره دانشگاه</TextBlock>
+                </Viewbox>
+                <Button
+                    HorizontalAlignment="Right"
+                    Click="Button_Click"
+                    Style="{DynamicResource GuilanGame.HeaderBlackButton}">
+                    <fa:ImageAwesome
+                        Width="24"
+                        Height="24"
+                        MinWidth="50"
+                        Margin="0,5"
+                        Foreground="#FFE4E4E4"
+                        Icon="ChevronCircleRight" />
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1" TextBlock.Foreground="#23a85a">
+                <ScrollViewer
+                    FlowDirection="RightToLeft"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <Image
+                            Width="150"
+                            Height="150"
+                            Margin="10"
+                            Source="/Assets/Photos/Guilan Logo 150x150.png" />
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Bold">
+                            دانشگاه گیلان
+                        </TextBlock>
+
+                        <TextBlock
+                            Margin="20"
+                            FlowDirection="RightToLeft"
+                            FontSize="15"
+                            TextAlignment="Justify"
+                            TextWrapping="Wrap">
+                            دانشگاه گیلان یکی از دانشگاه‌های دولتی ایران است که در سال ۱۳۵۳ تأسیس گردیده‌است و پردیس اصلی و برخی پردیس‌های آن در شهر رشت قرار دارد. این دانشگاه در زمرهٔ بزرگترین و یکی از قدیمی‌ترین دانشگاه‌های جامع شمال کشور ایران است. بر اساس آخرین رتبه‌بندی دانشگاه‌ها و مراکز تحقیقاتی که هر ساله توسط ISC، یعنی پایگاه استنادی علوم جهان اسلام صورت می‌گیرد، دانشگاه گیلان در رتبه‌بندی سال ۱۳۹۳ در رده هشتم دانشگاه‌های جامع کشور قرار گرفت. نسبت تعداد استاد به دانشجو در این دانشگاه در حدود ۱ به ۲۷ است که نسبتی بسیار خوب در قیاس با مقدار متوسط این نسبت در بین دانشگاه‌های ایران (حدود ۱ به ۳۳) محسوب می‌گردد.<LineBreak />
+                            <LineBreak />
+                            تأسیس دانشگاه گیلان در سال ۱۳۵۳ به تصویب شورای گسترش آموزش عالی رسید و در سالهای ۵۵–۱۳۵۴ در چارچوب قرارداد بین دولتهای ایران و آلمان غربی سابق، دانشگاه گیلان، تأسیس و از سال ۱۳۵۶ فعالیتهای آموزشی خود را با پذیرش ۱۵۵ دانشجو در ۹ رشته تحصیلی آغاز نمود. در سال ۱۳۵۶ مدرسه عالی مدیریت و مدرسه عالی بازرگانی رشت (تأسیس ۱۳۴۶) که تنها مراکز آموزش عالی در استان گیلان بودند با دانشگاه گیلان ادغام و فعالیت‌های آموزشی آن تا پایان سال تحصیلی ۱۳۵۸ با تعداد ۶۰۵ نفر دانشجو در ۱۴ رشته تحصیلی ادامه یافت.
+                            پس از پیروزی انقلاب اسلامی، دانشگاه گیلان بطور مستقل و بدون وابستگی به آلمان، فعالیتهای آموزشی خود را در ۸ رشته تحصیلی و با حدود ۵۰۰ دانشجو از سرگرفت و با رشد و گسترش آموزش عالی در کشور، دانشکده‌های علوم پایه، فنی، علوم کشاورزی، علوم انسانی و پزشکی ساخته شد و پس از آن نیز دانشکده تربیت بدنی و علوم ورزشی، دانشکده منابع طبیعی و معماری و هنر تأسیس شدند.</TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

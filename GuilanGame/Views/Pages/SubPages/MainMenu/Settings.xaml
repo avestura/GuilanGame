@@ -1,0 +1,206 @@
+﻿<Page
+    x:Class="GuilanGame.Views.Pages.SubPages.MainMenu.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
+    xmlns:local="clr-namespace:GuilanGame.Views.Pages.SubPages.MainMenu"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="SettingsPage"
+    Title="Settings"
+    d:DesignHeight="768"
+    d:DesignWidth="1024"
+    FontFamily="{StaticResource Fonts.IRANSans}"
+    Loaded="SettingsPage_Loaded"
+    mc:Ignorable="d">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+                        Storyboard.TargetName="SettingsPage"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0"
+                        To="1"
+                        Duration="0:0:0.25" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="5*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1"
+            Background="#E5000000">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#7F000000">
+                <Viewbox Margin="0,5">
+                    <TextBlock Foreground="White">تنظیمات</TextBlock>
+                </Viewbox>
+                <Button
+                    HorizontalAlignment="Right"
+                    Click="Button_Click"
+                    Style="{DynamicResource GuilanGame.HeaderBlackButton}">
+                    <fa:ImageAwesome
+                        Width="24"
+                        Height="24"
+                        MinWidth="50"
+                        Margin="0,5"
+                        Foreground="#FFE4E4E4"
+                        Icon="ChevronCircleRight" />
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1">
+                <TabControl
+                    Background="Transparent"
+                    BorderThickness="0"
+                    FlowDirection="RightToLeft"
+                    Style="{DynamicResource GuilanGame.SettingsPage.TabControl}">
+                    <TabItem IsSelected="True" Style="{DynamicResource GuilanGame.SettingsPage.TabItem}">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome
+                                    Width="30"
+                                    Margin="0,0,10,0"
+                                    Icon="Gamepad"
+                                    Style="{StaticResource GuilanGame.SettingsPage.TabItem.FontIconColor}" />
+                                <TextBlock Style="{StaticResource GuilanGame.SettingsPage.TabItem.TextColor}">گیم پلی</TextBlock>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <Grid>
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="Gray">
+                                در حال حاضر تنظیمی در این بخش موجود نیست
+                            </TextBlock>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Style="{DynamicResource GuilanGame.SettingsPage.TabItem}">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome
+                                    Width="30"
+                                    Margin="0,0,10,0"
+                                    Icon="Laptop"
+                                    Style="{StaticResource GuilanGame.SettingsPage.TabItem.FontIconColor}" />
+                                <TextBlock Style="{StaticResource GuilanGame.SettingsPage.TabItem.TextColor}">نمایش</TextBlock>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <Grid x:Name="DisplayTabContent">
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Foreground="Gray">
+                                در حال حاضر تنظیمی در این بخش موجود نیست
+                            </TextBlock>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Style="{DynamicResource GuilanGame.SettingsPage.TabItem}">
+                        <TabItem.Header>
+                            <StackPanel Orientation="Horizontal">
+                                <fa:ImageAwesome
+                                    Width="30"
+                                    Margin="0,0,10,0"
+                                    Icon="VolumeUp"
+                                    Style="{StaticResource GuilanGame.SettingsPage.TabItem.FontIconColor}" />
+                                <TextBlock Style="{StaticResource GuilanGame.SettingsPage.TabItem.TextColor}">صدا</TextBlock>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <!--  Menu Volume  -->
+                            <Grid
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Height="40"
+                                Margin="5"
+                                VerticalAlignment="Top"
+                                Background="#FF252525">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    Margin="5,0"
+                                    VerticalAlignment="Center">
+                                    موزیک
+                                </TextBlock>
+                                <Slider
+                                    x:Name="MusicSlider"
+                                    Grid.Column="1"
+                                    Margin="0,0,10,0"
+                                    VerticalAlignment="Center"
+                                    AutoToolTipPlacement="TopLeft"
+                                    LargeChange="5"
+                                    Maximum="100"
+                                    Minimum="0"
+                                    SmallChange="1"
+                                    Style="{DynamicResource GuilanGame.Slider.GameSlider}"
+                                    ValueChanged="MusicSlider_ValueChanged"
+                                    Value="100" />
+                            </Grid>
+
+                            <!--  Game Volume  -->
+                            <Grid
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Height="40"
+                                Margin="5"
+                                VerticalAlignment="Top"
+                                Background="#FF252525">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Column="0"
+                                    Margin="5,0"
+                                    VerticalAlignment="Center">
+                                    افکت
+                                </TextBlock>
+                                <Slider
+                                    x:Name="EffectSlider"
+                                    Grid.Column="1"
+                                    Margin="0,0,10,0"
+                                    VerticalAlignment="Center"
+                                    AutoToolTipPlacement="TopLeft"
+                                    LargeChange="5"
+                                    Maximum="100"
+                                    Minimum="0"
+                                    SmallChange="1"
+                                    Style="{DynamicResource GuilanGame.Slider.GameSlider}"
+                                    ValueChanged="EffectSlider_ValueChanged"
+                                    Value="100" />
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+
+                </TabControl>
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>
