@@ -23,7 +23,7 @@ namespace GuilanGame
         public Frame MainFrame { get { return Frame; } }
         public MediaPlayer MusicPlayer { get; } = new MediaPlayer();
         public MediaPlayer EffectPlayer { get; } = new MediaPlayer();
-        public bool SoundPlayerRepeatMode { get; set; }
+        public bool SoundPlayerRepeatMode { get; set; } = true;
 
         public MainWindow()
         {
@@ -51,6 +51,11 @@ namespace GuilanGame
                 MusicPlayer.Position = new TimeSpan(0, 0, 0);
                 MusicPlayer.Play();
             }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            App.CurrentApp.Shutdown();
         }
     }
 }

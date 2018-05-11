@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>GuilanICO.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ffme.common, Version=3.4.2.240, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FFME.Windows.3.4.240\lib\net461\ffme.common.dll</HintPath>
@@ -87,6 +90,9 @@
     <Compile Include="DataAccessLayer\RecordData.cs" />
     <Compile Include="Engines\CalculationEngine.cs" />
     <Compile Include="Engines\Converters\TabSizeConverter.cs" />
+    <Compile Include="Engines\ResourceLoader\MediaResourceLoader.cs" />
+    <Compile Include="Engines\ResourceLoader\IResourceLoader.cs" />
+    <Compile Include="Engines\ResourceLoader\TaggedUri.cs" />
     <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Models\RecordModels.cs" />
     <Compile Include="ViewModels\NewViewModel.cs" />
@@ -94,8 +100,15 @@
     <Compile Include="Views\Animations\MarginFadeAnimations.cs" />
     <Compile Include="Views\Animations\ShowAndFadeAnimations.cs" />
     <Compile Include="Views\Behaviors\BlinkBehavior.cs" />
+    <Compile Include="Views\Controls\QuestionPage.cs" />
     <Compile Include="Views\Controls\WaveCircle\WaveCircle.xaml.cs">
       <DependentUpon>WaveCircle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Extension\Finished.xaml.cs">
+      <DependentUpon>Finished.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Extension\LoadingPage.xaml.cs">
+      <DependentUpon>LoadingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Pages\Intro.xaml.cs">
       <DependentUpon>Intro.xaml</DependentUpon>
@@ -103,20 +116,50 @@
     <Compile Include="Views\Pages\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\SubPages\MainMenu\Scoreboard.xaml.cs">
+    <Compile Include="Views\Pages\Main\QuestionLoader.xaml.cs">
+      <DependentUpon>QuestionLoader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Main\Scoreboard.xaml.cs">
       <DependentUpon>Scoreboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\SubPages\MainMenu\University.xaml.cs">
+    <Compile Include="Views\Pages\Main\University.xaml.cs">
       <DependentUpon>University.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\SubPages\MainMenu\About.xaml.cs">
+    <Compile Include="Views\Pages\Main\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\SubPages\MainMenu\MasterPage.xaml.cs">
+    <Compile Include="Views\Pages\Main\MasterPage.xaml.cs">
       <DependentUpon>MasterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Pages\SubPages\MainMenu\Settings.xaml.cs">
+    <Compile Include="Views\Pages\Main\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Questions\Question9.xaml.cs">
+      <DependentUpon>Question9.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Questions\Question8.xaml.cs">
+      <DependentUpon>Question8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Questions\Question7.xaml.cs">
+      <DependentUpon>Question7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Questions\Question6.xaml.cs">
+      <DependentUpon>Question6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Questions\Question5.xaml.cs">
+      <DependentUpon>Question5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Questions\Question4.xaml.cs">
+      <DependentUpon>Question4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Questions\Question3.xaml.cs">
+      <DependentUpon>Question3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Questions\Question2.xaml.cs">
+      <DependentUpon>Question2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pages\Questions\Question1.xaml.cs">
+      <DependentUpon>Question1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PartialViews\Menus\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
@@ -160,25 +203,61 @@
     <Page Include="Views\Controls\WaveCircle\WaveCircle.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Pages\Extension\Finished.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Extension\LoadingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Pages\Intro.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Pages\MainMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\SubPages\MainMenu\Scoreboard.xaml">
+    <Page Include="Views\Pages\Main\QuestionLoader.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\SubPages\MainMenu\University.xaml">
+    <Page Include="Views\Pages\Main\Scoreboard.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\SubPages\MainMenu\About.xaml">
+    <Page Include="Views\Pages\Main\University.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\SubPages\MainMenu\MasterPage.xaml">
+    <Page Include="Views\Pages\Main\About.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Pages\SubPages\MainMenu\Settings.xaml">
+    <Page Include="Views\Pages\Main\MasterPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Main\Settings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Questions\Question9.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Questions\Question8.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Questions\Question7.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Questions\Question6.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Questions\Question5.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Questions\Question4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Questions\Question3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Questions\Question2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pages\Questions\Question1.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PartialViews\Menus\MainMenu.xaml">
@@ -203,6 +282,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Templates\GeneralTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Templates\Radio\QuizRadio.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Templates\Slider\GameSlider.xaml">
@@ -255,19 +337,19 @@
     <Resource Include="Assets\Photos\AryanSoftware_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\avcodec-58.dll">
+    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\avcodec-57.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\avdevice-58.dll">
+    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\avdevice-57.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\avfilter-7.dll">
+    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\avfilter-6.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\avformat-58.dll">
+    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\avformat-57.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\avutil-56.dll">
+    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\avutil-55.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\ffmpeg.exe">
@@ -279,46 +361,13 @@
     <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\ffprobe.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\postproc-55.dll">
+    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\postproc-54.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\swresample-3.dll">
+    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\swresample-2.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\swscale-5.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4_win32\avcodec-57.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4_win32\avdevice-57.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4_win32\avfilter-6.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4_win32\avformat-57.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4_win32\avutil-55.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4_win32\ffmpeg.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4_win32\ffplay.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4_win32\ffprobe.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4_win32\postproc-54.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4_win32\swresample-2.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Binary\FFMPEG.3.4_win32\swscale-4.dll">
+    <Content Include="Assets\Binary\FFMPEG.3.4.2_win32\swscale-4.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Media\Sound\Music.mp3">
@@ -331,6 +380,43 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Photos\AryanSoftware_Logo.svg" />
+    <Resource Include="Assets\Win10\Guilan Logo 70x70.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Win10\Guilan Logo 150x150.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GuilanGame.visualelementsmanifest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="GuilanICO.ico" />
+    <Resource Include="Assets\Photos\QuestionData\DoorA.png" />
+    <Resource Include="Assets\Photos\QuestionData\DoorB.png" />
+    <Resource Include="Assets\Photos\QuestionData\DoorC.png" />
+    <Resource Include="Assets\Photos\QuestionData\DoorD.png" />
+    <Resource Include="Assets\Photos\QuestionData\Level1-A.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level1-Q.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level2-A.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level2-Q.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level3-A.png" />
+    <Resource Include="Assets\Photos\QuestionData\Level3-Q.png" />
+    <Resource Include="Assets\Photos\QuestionData\Level4-A.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level4-Q.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level5-A.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level5-Q.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level6-A.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level6-Q.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level7-A.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level7-Q.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level8-A.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level8-Q.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level9-A.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\Level9-Q.jpg" />
+    <Resource Include="Assets\Photos\QuestionData\SignA.png" />
+    <Resource Include="Assets\Photos\QuestionData\SignB.png" />
+    <Resource Include="Assets\Photos\QuestionData\SignC.png" />
+    <Resource Include="Assets\Photos\QuestionData\SignD.png" />
+    <SplashScreen Include="Splash.jpg" />
     <Resource Include="Assets\Photos\Guilan Logo 150x150.png" />
     <Resource Include="Assets\Photos\Pattern_CreamPixels.png" />
   </ItemGroup>

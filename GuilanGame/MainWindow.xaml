@@ -8,6 +8,7 @@
     Title="MainWindow"
     Width="1024"
     Height="768"
+    Closed="Window_Closed"
     Loaded="Window_Loaded"
     Topmost="True"
     WindowStartupLocation="CenterScreen"
@@ -18,6 +19,7 @@
     <Grid>
         <Frame
             x:Name="Frame"
+            JournalOwnership="UsesParentJournal"
             NavigationUIVisibility="Hidden"
             Source="pack://application:,,,/GuilanGame;component/Views/Pages/Intro.xaml" />
     </Grid>

@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:GuilanGame"
+    LoadCompleted="Application_LoadCompleted"
     Startup="Application_Startup"
     StartupUri="MainWindow.xaml">
     <Application.Resources>
@@ -48,6 +49,8 @@
                 <ResourceDictionary Source="pack://application:,,,/GuilanGame;component/Views/Templates/Tab/SettingsTabControlTemplate.xaml" />
 
                 <ResourceDictionary Source="pack://application:,,,/GuilanGame;component/Views/Templates/DataGrid/DataGridTemplate.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/GuilanGame;component/Views/Templates/Radio/QuizRadio.xaml" />
 
                 <!--#endregion-->
 
