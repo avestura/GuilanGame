@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO;
 
 namespace GuilanGame.Views.Pages
 {
@@ -23,10 +23,6 @@ namespace GuilanGame.Views.Pages
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
 
-            //IntroPlayer.BeginInit();
-            IntroPlayer.Source = new Uri($"{AppDomain.CurrentDomain.BaseDirectory}/Assets/Media/Video/GameIntro 1920x1080.mp4");
-            //IntroPlayer.EndInit();
-            //IntroPlayer.Play();
             Focus();
         }
 
@@ -42,6 +38,12 @@ namespace GuilanGame.Views.Pages
 
             if (e.Key == Key.Escape)
                 App.CastedMainWindow.MainFrame.Navigate(App.MainMenu);
+
+        }
+
+        private void IntroPlayer_Loaded(object sender, RoutedEventArgs e)
+        {
+            IntroPlayer.Source = new Uri($"{Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)}\\Assets\\Media\\Video\\GameIntro 1920x1080.mp4");
 
         }
     }

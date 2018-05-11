@@ -1,4 +1,5 @@
 ﻿using GuilanGame.Views.Animations;
+using GuilanGame.Views.Pages.Main;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,18 +15,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GuilanGame.Views.Pages.SubPages.MainMenu
+namespace GuilanGame.Views.Pages.Extension
 {
     /// <summary>
     /// Interaction logic for About.xaml
     /// </summary>
-    public partial class Scoreboard : Page
+    public partial class Finsihed : Page
     {
         private bool backAvailable = true;
 
-        public Scoreboard()
+        private bool storeData = false;
+
+        public Finsihed(bool storeData = false)
         {
             InitializeComponent();
+            this.storeData = storeData;
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -40,16 +44,24 @@ namespace GuilanGame.Views.Pages.SubPages.MainMenu
 
         }
 
-        private void RecordsDataGrid_Sorting(object sender, DataGridSortingEventArgs e)
+        private void Finshed_Loaded(object sender, RoutedEventArgs e)
         {
-            e.Handled = true;
+            CurrentName.Text = App.CurrentApp.CurrentRecord.Name;
+            CurrentScore.Text = App.CurrentApp.CurrentRecord.Score.ToString();
+            CurrentField.Text = App.CurrentApp.CurrentRecord.StudentFiled;
+
+            if (storeData)
+            {
+                App.CurrentApp.Configuration.RecordData.Add(new Models.RecordItem()
+                {
+                    Name = App.CurrentApp.CurrentRecord.Name,
+                    StudentFiled = App.CurrentApp.CurrentRecord.StudentFiled,
+                    Score = App.CurrentApp.CurrentRecord.Score
+                });
+
+                App.CurrentApp.Configuration.SaveSettingsToFile();
+            }
+
         }
-
-        private void AboutPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            DataContext = App.CurrentApp.RecordData.ViewRecords;
-
-        }
-
     }
 }

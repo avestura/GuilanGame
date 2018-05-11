@@ -14,16 +14,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GuilanGame.Views.Pages.SubPages.MainMenu
+namespace GuilanGame.Views.Pages.Main
 {
     /// <summary>
     /// Interaction logic for About.xaml
     /// </summary>
-    public partial class University : Page
+    public partial class Scoreboard : Page
     {
         private bool backAvailable = true;
 
-        public University()
+        public Scoreboard()
         {
             InitializeComponent();
         }
@@ -39,5 +39,17 @@ namespace GuilanGame.Views.Pages.SubPages.MainMenu
             }
 
         }
+
+        private void RecordsDataGrid_Sorting(object sender, DataGridSortingEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private void AboutPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataContext = App.CurrentApp.RecordData.ViewRecords;
+
+        }
+
     }
 }

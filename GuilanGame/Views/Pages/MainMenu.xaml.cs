@@ -1,6 +1,7 @@
 ﻿using GuilanGame.Views.Animations;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GuilanGame.Views.Pages
 {
@@ -30,18 +30,18 @@ namespace GuilanGame.Views.Pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            Dispatcher.Invoke(() =>
-            {
-                PageMediaElement = new Unosquare.FFME.MediaElement();
-                Background = new VisualBrush(PageMediaElement);
-                PageMediaElement.LoadedBehavior = MediaState.Play;
-                PageMediaElement.MediaEnded += PageMediaElement_MediaEnded;
-                PageMediaElement.MediaOpened += PageMediaElement_MediaOpened;
-                PageMediaElement.Source = new Uri($"{AppDomain.CurrentDomain.BaseDirectory}/Assets/Media/Video/Guilan Trailer.mp4");
 
-            });
+            PageMediaElement = new Unosquare.FFME.MediaElement
+            {
+                LoadedBehavior = MediaState.Play
+            };
+            PageMediaElement.MediaEnded += PageMediaElement_MediaEnded;
+            PageMediaElement.MediaOpened += PageMediaElement_MediaOpened;
+
+                PageMediaElement.Source = new Uri($"{Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)}\\Assets\\Media\\Video\\Guilan Trailer.mp4");
+
             PageFrame.Visibility = Visibility.Collapsed;
-            App.CastedMainWindow.MusicPlayer.Open(new Uri($"{AppDomain.CurrentDomain.BaseDirectory}/Assets/Media/Sound/Music.mp3"));
+            App.CastedMainWindow.MusicPlayer.Open(new Uri($"{Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory)}\\Assets\\Media\\Sound\\Music.mp3"));
             App.CastedMainWindow.SoundPlayerRepeatMode = true;
 
         }
@@ -59,6 +59,7 @@ namespace GuilanGame.Views.Pages
 
         private void PageMediaElement_MediaOpened(object sender, RoutedEventArgs e)
         {
+            Background = new VisualBrush(PageMediaElement);
             App.CastedMainWindow.MusicPlayer.Play();
             PageFrame.ShowUsingLinearAnimation();
         }

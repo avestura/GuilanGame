@@ -20,6 +20,7 @@
     <Grid>
         <ffme:MediaElement
             x:Name="IntroPlayer"
+            Loaded="IntroPlayer_Loaded"
             LoadedBehavior="Play"
             MediaEnded="IntroPlayer_MediaEnded"
             UnloadedBehavior="Stop" />

@@ -1,0 +1,158 @@
+﻿<Page
+    x:Class="GuilanGame.Views.Pages.Extension.Finsihed"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
+    xmlns:local="clr-namespace:GuilanGame.Views.Pages.Extension"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="Finshed"
+    d:DesignHeight="768"
+    d:DesignWidth="1024"
+    FontFamily="{StaticResource Fonts.IRANSans}"
+    Loaded="Finshed_Loaded"
+    mc:Ignorable="d">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+                        Storyboard.TargetName="Finshed"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0"
+                        To="1"
+                        Duration="0:0:0.25" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="5*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1"
+            Background="#E5000000">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#7F000000">
+                <Viewbox Margin="0,5">
+                    <TextBlock Foreground="White">پایان</TextBlock>
+                </Viewbox>
+
+            </Grid>
+            <Grid Grid.Row="1" TextBlock.Foreground="#FBC02D">
+                <ScrollViewer
+                    FlowDirection="RightToLeft"
+                    HorizontalScrollBarVisibility="Disabled"
+                    VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <TextBlock
+                            Margin="20"
+                            HorizontalAlignment="Center"
+                            FontSize="25"
+                            FontWeight="Bold">
+                            بازی پایان یافت
+                        </TextBlock>
+
+                        <Grid
+                            Margin="30,20"
+                            FlowDirection="RightToLeft"
+                            TextBlock.FontSize="15"
+                            TextBlock.TextAlignment="Justify">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="0,0,0,10"
+                                Padding="15,15"
+                                Background="#CC262E3F"
+                                BorderBrush="#FF115A7F"
+                                BorderThickness="5,0,0,0"
+                                Foreground="#FF32B9FC">
+                                نام
+                            </Label>
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="0,0,0,10"
+                                Padding="15,15"
+                                Background="#CC262E3F"
+                                BorderBrush="#FF115A7F"
+                                BorderThickness="5,0,0,0"
+                                Foreground="#FF32B9FC">
+                                رشته تحصیلی
+                            </Label>
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Margin="0,0,0,10"
+                                Padding="15,15"
+                                Background="#CC262E3F"
+                                BorderBrush="#FF115A7F"
+                                BorderThickness="5,0,0,0"
+                                Foreground="#FF32B9FC">
+                                امتیاز شما
+                            </Label>
+
+                            <TextBlock
+                                x:Name="CurrentName"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="0,0,0,10"
+                                Padding="15,15"
+                                Background="#CC433C2B" />
+
+                            <TextBlock
+                                x:Name="CurrentField"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="0,0,0,10"
+                                Padding="15,15"
+                                Background="#CC433C2B" />
+
+                            <TextBlock
+                                x:Name="CurrentScore"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="0,0,0,10"
+                                Padding="15,15"
+                                Background="#CC433C2B" />
+
+                        </Grid>
+
+                        <Button
+                            Width="200"
+                            Height="40"
+                            Background="#FF4B4B4B"
+                            Click="Button_Click"
+                            Foreground="White"
+                            Style="{DynamicResource GuilanGame.HeaderBlackButton}">
+                            بازگشت به منو اصلی
+                        </Button>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

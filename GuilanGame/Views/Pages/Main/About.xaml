@@ -1,10 +1,10 @@
 ﻿<Page
-    x:Class="GuilanGame.Views.Pages.SubPages.MainMenu.About"
+    x:Class="GuilanGame.Views.Pages.Main.About"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:fa="http://schemas.fontawesome.io/icons/"
-    xmlns:local="clr-namespace:GuilanGame.Views.Pages.SubPages.MainMenu"
+    xmlns:local="clr-namespace:GuilanGame.Views.Pages.Main"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="AboutPage"
     Title="About"
@@ -144,7 +144,7 @@
                                 Margin="0,0,0,10"
                                 Padding="15,15"
                                 Background="#CC433C2B">
-                                خلاقیت ها، ایده ها و طراحی سوالات بازی
+                                خلاقیت، ایده پردازی و طراحی برخی از سوالات بازی
                             </TextBlock>
 
                             <TextBlock

@@ -1,0 +1,296 @@
+﻿<Page
+    x:Class="GuilanGame.Views.Pages.Extension.LoadingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
+    xmlns:local="clr-namespace:GuilanGame.Views.Pages.Extension"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="Loading"
+    Title="LoadingPage"
+    d:DesignHeight="1200"
+    d:DesignWidth="1000"
+    FlowDirection="RightToLeft"
+    FontFamily="{StaticResource Fonts.IRANSans}"
+    Loaded="Loading_Loaded"
+    mc:Ignorable="d">
+
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation
+                        Storyboard.TargetName="Loading"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0"
+                        To="1"
+                        Duration="0:0:0.25" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="10*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1"
+            Background="#F9000000">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Background="#CC000000">
+                <Viewbox Margin="15" HorizontalAlignment="Left">
+                    <TextBlock x:Name="QuestionTitle" Foreground="White">
+                        <Bold>به بازی دانشگاه گیلان خوش اومدین!</Bold>
+                    </TextBlock>
+                </Viewbox>
+            </Border>
+            <StackPanel
+                x:Name="LoadingScreen"
+                Grid.Row="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Visibility="Collapsed">
+                <fa:ImageAwesome
+                    Height="50"
+                    Icon="CircleOutline"
+                    Spin="True"
+                    SpinDuration="1">
+                    <fa:ImageAwesome.Foreground>
+                        <LinearGradientBrush MappingMode="RelativeToBoundingBox" StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Offset="0" Color="#FF827E00" />
+                            <GradientStop Offset="1" Color="White" />
+                            <GradientStop Offset="0.347" Color="#FFBDBB7A" />
+                            <GradientStop Color="#FF9C970B" />
+                        </LinearGradientBrush>
+                    </fa:ImageAwesome.Foreground>
+                </fa:ImageAwesome>
+                <TextBlock
+                    Margin="15"
+                    FontSize="15"
+                    Foreground="White">
+                    در حال بارگذاری...
+                </TextBlock>
+            </StackPanel>
+            <StackPanel
+                x:Name="GameRulesContent"
+                Grid.Row="1"
+                Margin="20"
+                TextBlock.Foreground="White">
+                <TextBlock
+                    TextAlignment="Justify"
+                    TextBlock.FontSize="15"
+                    TextWrapping="Wrap">
+                    این بازی، یه بازی به سبک پرسش و پاسخه که برای دانشجویان دانشگاه گیلان، طراحی شده.<LineBreak />
+                    <LineBreak />
+                    ما در طول هفته بارها و بارها به قسمت های مختلف دانشگاه میریم و مسیر های مختلف دانشگاه رو طی میکنیم و ساختمون ها و تابلو ها و ... زیادی رو میبینیم.<LineBreak />
+                    هدف از این بازی اینه که ببینه دانشجو های دانشگاه گیلان چقدر به اطرافشون توجه دارن. کلید اساسی بردن این بازی اینه که شخص دوتا ویژگی داشته باشه:<LineBreak />
+                    <BulletDecorator>
+                        <BulletDecorator.Bullet>
+                            <Ellipse
+                                Width="10"
+                                Height="10"
+                                Fill="#FFF3F34B" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Margin="5,0">نقاط مختلف دانشگاه گیلان رو گشته باشه</TextBlock>
+                    </BulletDecorator>
+                    <LineBreak />
+                    <BulletDecorator>
+                        <BulletDecorator.Bullet>
+                            <Ellipse
+                                Width="10"
+                                Height="10"
+                                Fill="#FFF3F34B" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Margin="5,0">دقت کافی به محیط اطرافش رو داشته باشه</TextBlock>
+                    </BulletDecorator>
+                    <LineBreak />
+                    <LineBreak />
+                    <Bold>قواعد بازی:</Bold>
+                    <LineBreak />
+                    <BulletDecorator>
+                        <BulletDecorator.Bullet>
+                            <Ellipse
+                                Width="10"
+                                Height="10"
+                                Fill="#FFF3F34B" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Margin="5,0">این بازی امتیازیه. در آخر بازی امتیازی که گرفتی ثبت میشه و میتونی امتیازت رو با بقیه مقایسه کنی.</TextBlock>
+                    </BulletDecorator>
+                    <LineBreak />
+                    <BulletDecorator>
+                        <BulletDecorator.Bullet>
+                            <Ellipse
+                                Width="10"
+                                Height="10"
+                                Fill="#FFF3F34B" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock
+                            Margin="5,0"
+                            TextAlignment="Justify"
+                            TextWrapping="Wrap">
+                            استفاده از گزینه راهنما در حین جواب دادن به سوال امتیازت رو
+                            <TextBlock Margin="2,0,0,0" Foreground="#FFEA7A7A">کم</TextBlock>
+                            میکنه. اما بعد از دیدن پاسخ میتونی راهنما رو ببینی که چه کمکی میتونست بهت کنه.
+                        </TextBlock>
+                    </BulletDecorator>
+                    <LineBreak />
+                    <BulletDecorator>
+                        <BulletDecorator.Bullet>
+                            <Ellipse
+                                Width="10"
+                                Height="10"
+                                Fill="#FFF3F34B" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Margin="5,0" TextWrapping="Wrap">
+                            توی این بازی جواب های متنی وجود داره. یعنی باید شما جواب رو تایپ کنید. برای عادلانه تر کردن بازی، همه جواب های ممکن و یا حتی شبیه به جواب اصلی، به جواب ها اضافه شدن. پس احتمالا میتونید با خیال راحت تایپ کنید.
+                        </TextBlock>
+                    </BulletDecorator><LineBreak />
+
+                </TextBlock>
+                <StackPanel TextBlock.FontSize="15">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="15">نام شما:</TextBlock>
+                        <TextBox
+                            x:Name="PlayerName"
+                            Grid.Column="1"
+                            Margin="10,0"
+                            Padding="10"
+                            Background="#FF2B2B2B"
+                            BorderBrush="{x:Null}"
+                            BorderThickness="0"
+                            FontSize="20"
+                            Foreground="#FF828282"
+                            MaxLength="30"
+                            TextChanged="Field_TextChanged">
+                            <TextBox.Triggers>
+                                <EventTrigger RoutedEvent="Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation
+                                                AutoReverse="True"
+                                                RepeatBehavior="Forever"
+                                                Storyboard.TargetName="PlayerName"
+                                                Storyboard.TargetProperty="(TextBox.Foreground).(SolidColorBrush.Color)"
+                                                From="White"
+                                                To="#FF2B2B2B"
+                                                Duration="0:0:1">
+                                                <ColorAnimation.EasingFunction>
+                                                    <ExponentialEase EasingMode="EaseInOut" />
+                                                </ColorAnimation.EasingFunction>
+                                            </ColorAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </TextBox.Triggers>
+                            لطفا نام خود را وارد کنید
+                        </TextBox>
+                    </Grid>
+                    <Grid Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" FontSize="15">رشته تحصیلی:</TextBlock>
+                        <TextBox
+                            x:Name="FieldName"
+                            Grid.Column="1"
+                            Margin="10,0"
+                            Padding="10"
+                            Background="#FF2B2B2B"
+                            BorderBrush="{x:Null}"
+                            BorderThickness="0"
+                            FontSize="20"
+                            Foreground="#FF828282"
+                            MaxLength="40"
+                            TextChanged="Field_TextChanged">
+                            <TextBox.Triggers>
+                                <EventTrigger RoutedEvent="Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation
+                                                AutoReverse="True"
+                                                RepeatBehavior="Forever"
+                                                Storyboard.TargetName="FieldName"
+                                                Storyboard.TargetProperty="(TextBox.Foreground).(SolidColorBrush.Color)"
+                                                From="White"
+                                                To="#FF2B2B2B"
+                                                Duration="0:0:1">
+                                                <ColorAnimation.EasingFunction>
+                                                    <ExponentialEase EasingMode="EaseInOut" />
+                                                </ColorAnimation.EasingFunction>
+                                            </ColorAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </TextBox.Triggers>
+                            لطفا رشته تحصیلی خود را وارد کنید
+                        </TextBox>
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+            <Border Grid.Row="2" Background="#CC000000">
+                <Grid FlowDirection="LeftToRight">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                        <Button
+                            x:Name="StartButton"
+                            Margin="5"
+                            Padding="50,0"
+                            Click="StartButton_Click"
+                            Foreground="White"
+                            IsEnabled="False"
+                            Style="{DynamicResource GuilanGame.HeaderBlackButton}">
+                            <StackPanel FlowDirection="RightToLeft" Orientation="Horizontal">
+                                <fa:ImageAwesome
+                                    Height="15"
+                                    Margin="0,0,8,0"
+                                    Foreground="White"
+                                    Icon="PlayCircle" />
+                                <TextBlock Foreground="White">شروع بازی</TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                    <Button
+                        x:Name="GoHome"
+                        Grid.Column="1"
+                        Margin="5"
+                        Padding="50,0"
+                        Click="GoHome_ClickAsync"
+                        Foreground="White"
+                        Style="{DynamicResource GuilanGame.HeaderBlackButton}">
+                        <StackPanel FlowDirection="RightToLeft" Orientation="Horizontal">
+                            <fa:ImageAwesome
+                                Height="15"
+                                Margin="0,0,8,0"
+                                Foreground="White"
+                                Icon="Home" />
+                            <TextBlock Foreground="White">
+                                بازگشت به منو
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

@@ -19,9 +19,10 @@
 
         <Frame
             x:Name="PageFrame"
+            JournalOwnership="UsesParentJournal"
             Navigating="PageFrame_Navigating"
             NavigationUIVisibility="Hidden"
-            Source="pack://application:,,,/GuilanGame;component/Views/Pages/SubPages/MainMenu/MasterPage.xaml" />
+            Source="pack://application:,,,/GuilanGame;component/Views/Pages/Main/MasterPage.xaml" />
     </Grid>
 
 </Page>

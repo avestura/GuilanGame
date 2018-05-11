@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GuilanGame.Views.Pages.SubPages.MainMenu
+namespace GuilanGame.Views.Pages.Main
 {
     /// <summary>
     /// Interaction logic for Settings.xaml

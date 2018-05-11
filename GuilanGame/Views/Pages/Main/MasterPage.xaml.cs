@@ -1,4 +1,5 @@
 ﻿using GuilanGame.Views.Animations;
+using GuilanGame.Views.Pages.Extension;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GuilanGame.Views.Pages.SubPages.MainMenu
-{
+namespace GuilanGame.Views.Pages.Main{
     /// <summary>
     /// Interaction logic for MasterPage.xaml
     /// </summary>
@@ -87,6 +87,19 @@ namespace GuilanGame.Views.Pages.SubPages.MainMenu
                 await this.HideUsingLinearAnimationAsync(milliSeconds: 250);
                 App.MainMenu.PageFrame.Navigate(new Scoreboard());
                 _isNavigatingScore = false;
+            }
+
+        }
+
+        private bool _isNavigatingPlay = false;
+        private async void OnlinePlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!_isNavigatingPlay)
+            {
+                _isNavigatingPlay = true;
+                await this.HideUsingLinearAnimationAsync(milliSeconds: 250);
+                App.MainMenu.PageFrame.Navigate(new LoadingPage());
+                _isNavigatingPlay = false;
             }
 
         }
