@@ -16,13 +16,7 @@ namespace GuilanGame.DataAccessLayer
         public RecordData()
         {
 
-            Records = new ObservableCollection<RecordItem>(){
-                new RecordItem(){Name = "آرین", Score = 20, StudentFiled = StudentFiled.Computer},
-                new RecordItem(){Name = "عرفان", Score = 85},
-                new RecordItem(){Name = "g", Score = 85},
-                new RecordItem(){Name = "نیکان", Score = 160},
-                new RecordItem(){Name = "مصطفی", Score = 30},
-            };
+            Records = App.CurrentApp.Configuration.RecordData;
 
             ViewRecords.CollectionChanged += ViewRecords_CollectionChanged;
 
