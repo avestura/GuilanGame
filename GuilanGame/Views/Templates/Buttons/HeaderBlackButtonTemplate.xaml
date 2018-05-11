@@ -9,9 +9,10 @@
     <SolidColorBrush x:Key="GuilanGame.HeaderBlackButtonTemplate.MouseOver.Border" Color="#FF3C7FB1" />
     <SolidColorBrush x:Key="GuilanGame.HeaderBlackButtonTemplate.Pressed.Background" Color="#7F666666" />
     <SolidColorBrush x:Key="GuilanGame.HeaderBlackButtonTemplate.Pressed.Border" Color="#FF2C628B" />
-    <SolidColorBrush x:Key="GuilanGame.HeaderBlackButtonTemplate.Disabled.Background" Color="#FFF4F4F4" />
+    <SolidColorBrush x:Key="GuilanGame.HeaderBlackButtonTemplate.Disabled.Background" Color="#4CF4F4F4" />
     <SolidColorBrush x:Key="GuilanGame.HeaderBlackButtonTemplate.Disabled.Border" Color="#FFADB2B5" />
-    <SolidColorBrush x:Key="GuilanGame.HeaderBlackButtonTemplate.Disabled.Foreground" Color="#FF838383" />
+    <SolidColorBrush x:Key="GuilanGame.HeaderBlackButtonTemplate.Disabled.Foreground" Color="#FF6E6E6E" />
+
     <Style x:Key="GuilanGame.HeaderBlackButton" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Background" Value="{StaticResource GuilanGame.HeaderBlackButtonTemplate.Static.Background}" />
@@ -20,6 +21,7 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
+
         <Setter Property="Padding" Value="1" />
         <Setter Property="Template">
             <Setter.Value>
@@ -52,6 +54,7 @@
                             <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource GuilanGame.HeaderBlackButtonTemplate.Pressed.Border}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="border" Property="Opacity" Value="0.5" />
                             <Setter TargetName="border" Property="Background" Value="{StaticResource GuilanGame.HeaderBlackButtonTemplate.Disabled.Background}" />
                             <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource GuilanGame.HeaderBlackButtonTemplate.Disabled.Border}" />
                             <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource GuilanGame.HeaderBlackButtonTemplate.Disabled.Foreground}" />
