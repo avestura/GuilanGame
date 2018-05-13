@@ -32,8 +32,8 @@ namespace GuilanGame.Engines.ResourceLoader
             var loadWin = new NavigationWindow();
 
             Uri[] pagesToLoad = {
-                nameof(MainMenu).PageLocalUri(),
-                nameof(Intro).PageLocalUri(),
+                //nameof(MainMenu).PageLocalUri(),
+                //nameof(Intro).PageLocalUri(),
                 nameof(About).PageLocalUri("Main/"),
                 nameof(MasterPage).PageLocalUri("Main/"),
                 nameof(Scoreboard).PageLocalUri("Main/"),

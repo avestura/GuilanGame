@@ -1,5 +1,5 @@
 ﻿<controls:QuestionPage
-    x:Class="GuilanGame.Views.Pages.Questions.Question8"
+    x:Class="GuilanGame.Views.Pages.Questions.Question10"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:GuilanGame.Views.Controls"
@@ -9,13 +9,13 @@
     xmlns:local="clr-namespace:GuilanGame.Views.Pages.Questions"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="ThisPage"
-    Title="دانشکده انسانی"
+    Title="چه متنی روی در مرکز کامپیوتر کارشناسی فنی هست؟"
     d:DesignHeight="450"
     d:DesignWidth="800"
     Background="Black"
     FlowDirection="RightToLeft"
     FontFamily="{StaticResource Fonts.IRANSans}"
-    QuestionHint="این مسیر مطمئنن مسیر خوبی برای اساتید مدعو خواهد بود (:"
+    QuestionHint="کارکنان دانشگاه چیزی روی درخت هک نمیکنن"
     TextBlock.FontSize="15"
     TextBlock.Foreground="White"
     mc:Ignorable="d">
@@ -41,15 +41,15 @@
             <Image
                 x:Name="QImage"
                 Grid.Row="0"
-                Source="/Assets/Photos/QuestionData/Level8-Q.jpg"
+                Source="/Assets/Photos/QuestionData/Level10-Q.jpg"
                 Stretch="Uniform" />
 
             <TextBlock
                 Grid.Row="1"
                 Margin="10"
                 TextWrapping="Wrap">
-                میتونی بگی روی تابلوی نزدیک به ورودی دانشکده ادبیات (پشت علامت سوال در واقع) کدوم یکی از کلمات پایین وجود&#160;<Underline>نداره</Underline>
-                ؟</TextBlock>
+                میتونی بگی چه چیزی روی در مرکز کامپیوتر کارشناسی فنی نوشته شده؟ اگه بتونی دقیقا بنویسیش که امتیاز بیشتری هم میگیری.
+            </TextBlock>
 
             <Grid Grid.Row="2" Margin="10">
                 <Grid.ColumnDefinitions>
@@ -57,6 +57,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
+                    <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
                 </Grid.RowDefinitions>
@@ -68,7 +69,7 @@
                     Margin="5"
                     Foreground="White"
                     Style="{DynamicResource GuilanGame.QuizRadio}">
-                    <TextBlock FontSize="20">زبان روسی</TextBlock>
+                    <TextBlock FontSize="20">یک عدد و یک حرف الفبا</TextBlock>
                 </RadioButton>
                 <RadioButton
                     x:Name="Chk2"
@@ -77,7 +78,7 @@
                     Margin="5"
                     Foreground="White"
                     Style="{DynamicResource GuilanGame.QuizRadio}">
-                    <TextBlock FontSize="20">دفتر مجلات</TextBlock>
+                    <TextBlock FontSize="20">یک رقم و یک حرف</TextBlock>
                 </RadioButton>
                 <RadioButton
                     x:Name="Chk3"
@@ -86,7 +87,7 @@
                     Margin="5"
                     Foreground="White"
                     Style="{DynamicResource GuilanGame.QuizRadio}">
-                    <TextBlock FontSize="20">اساتید مدعو</TextBlock>
+                    <TextBlock FontSize="20">یک حرف الفبا</TextBlock>
                 </RadioButton>
                 <RadioButton
                     x:Name="Chk4"
@@ -95,8 +96,22 @@
                     Margin="5"
                     Foreground="White"
                     Style="{DynamicResource GuilanGame.QuizRadio}">
-                    <TextBlock FontSize="20">قرآن و حدیث</TextBlock>
+                    <TextBlock FontSize="20">یک عدد</TextBlock>
                 </RadioButton>
+                <StackPanel
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Margin="0,10"
+                    Orientation="Horizontal"
+                    TextBlock.FontSize="20">
+                    <TextBlock>اگه میتونی متن دقیق رو هم بنویس:</TextBlock>
+                    <TextBox
+                        x:Name="InputTextBox"
+                        Width="250"
+                        Margin="5,0"
+                        MaxLength="5"
+                        TextAlignment="Center" />
+                </StackPanel>
             </Grid>
 
         </Grid>
@@ -113,7 +128,7 @@
 
             <Image
                 Grid.Row="0"
-                Source="/Assets/Photos/QuestionData/Level8-A.jpg"
+                Source="/Assets/Photos/QuestionData/Level10-A.jpg"
                 Stretch="{Binding ElementName=QImage, Path=Stretch}" />
 
             <TextBlock
@@ -121,9 +136,6 @@
                 Margin="10"
                 Text="{Binding ElementName=ThisPage, Path=ResultMessage}"
                 TextWrapping="Wrap" />
-            <TextBlock Grid.Row="2" Margin="10">
-                این سوالو ادبیاتی ها باید جواب میدادن (:
-            </TextBlock>
 
         </Grid>
 

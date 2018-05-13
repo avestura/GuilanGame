@@ -25,12 +25,15 @@ namespace GuilanGame.Views.Pages.Main
     public partial class QuestionLoader : Page
     {
 
+        public const int NumberOfQuestions = 10;
+
         public QuestionPage CurrentQuestionSheet => QuestionFrame.Content as QuestionPage;
 
         public Queue<QuestionPage> Questions { get; set; }
 
         private IEnumerable<QuestionPage> QuestionsEnum => new List<QuestionPage>
         {
+
             new Questions.Question1(),
             new Questions.Question2(),
             new Questions.Question3(),
@@ -40,7 +43,8 @@ namespace GuilanGame.Views.Pages.Main
             new Questions.Question7(),
             new Questions.Question8(),
             new Questions.Question9()
-        };
+
+        }.OrderBy(x => Guid.NewGuid()).Take(NumberOfQuestions);
 
         public QuestionLoader()
         {

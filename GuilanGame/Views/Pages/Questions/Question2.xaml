@@ -9,7 +9,7 @@
     xmlns:local="clr-namespace:GuilanGame.Views.Pages.Questions"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="ThisPage"
-    Title="۲- تابلو مخفی شده، کدوم یکی از تابلو های زیره؟"
+    Title="تابلو مخفی شده، کدوم یکی از تابلو های زیره؟"
     d:DesignHeight="450"
     d:DesignWidth="800"
     Background="Black"

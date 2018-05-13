@@ -107,7 +107,10 @@
                             Width="*"
                             Binding="{Binding Score}"
                             Header="امتیاز" />
-                        <DataGridTemplateColumn Width="*" Header="رشته" />
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding StudentFiled}"
+                            Header="رشته" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

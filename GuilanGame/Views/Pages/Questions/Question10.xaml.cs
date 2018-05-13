@@ -17,9 +17,9 @@ using System.Windows.Shapes;
 namespace GuilanGame.Views.Pages.Questions
 {
 
-    public partial class Question9: QuestionPage
+    public partial class Question10 : QuestionPage
     {
-        public Question9()
+        public Question10()
         {
             InitializeComponent();
             HintBorder = _HintBorder;
@@ -27,13 +27,19 @@ namespace GuilanGame.Views.Pages.Questions
             QuestionArea = _QuestionArea;
         }
 
+        static int tempScore = 0;
         public override (int Score, string Message) Evaluate()
         {
+            if (InputTextBox.Text == "101" || InputTextBox.Text == "۱۰۱")
+            {
+                tempScore = 100;
+            }
+
             if (Chk4.IsChecked == true)
             {
                 return (!HintUsed) ?
-                    (80, "تو حتی به درخت ها هم توجه میکنی! جالبه") :
-                    (40, "تو حتی به درخت ها هم توجه میکنی! جالبه");
+                    (80, "با پاسخ درستت بازی رو تموم کردی") :
+                    (40, "با پاسخ درستت بازی رو تموم کردی");
 
             }
             else
